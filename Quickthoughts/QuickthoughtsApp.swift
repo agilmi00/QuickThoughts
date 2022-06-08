@@ -2,7 +2,7 @@
 //  QuickthoughtsApp.swift
 //  Quickthoughts
 //
-//  Created by Adrián Gil Miranda on 31/5/22.
+//  Created by Cl0ud7.
 //
 
 import SwiftUI
