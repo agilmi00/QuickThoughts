@@ -9,9 +9,18 @@ import SwiftUI
 
 @main
 struct QuickthoughtsApp: App {
+    @StateObject var auth = Authentication(user: User())
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if auth.loginStatus() {
+                ContentView()
+                    .environmentObject(auth)
+            }
+            else {
+                LoginView()
+                    .environmentObject(auth)
+            }
         }
     }
 }

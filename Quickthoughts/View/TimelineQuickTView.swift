@@ -9,6 +9,9 @@
 import SwiftUI
 
 struct TimelineQuickTView: View {
+    
+    var quickt: QuickT
+    var user: String
     var body: some View {
         VStack {
             HStack {
@@ -17,25 +20,32 @@ struct TimelineQuickTView: View {
                     .frame(alignment: .leading)
                     .padding(.leading, 30)
                     
-                Text("Name")
-                    .foregroundColor(.white)
+                Text(String(user))
+                    .foregroundColor(.black)
                     .frame(alignment: .leading)
                     .padding(.leading, 10)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.top, 10)
-            Text("Pois xa estaria, despois de facer unha libreria matematica propia aqui esta, rotación usando quaternions. Mostra angulos de euler pa que sea mais facil de modificar pero internamente a rotacion calculase con quaternions.")
-                .foregroundColor(.white)
+            Text(quickt.text)
+                .foregroundColor(.black)
+                .frame(maxWidth: .infinity, alignment: .leading)
                 .padding([.leading, .bottom, .trailing], 30)
                 .padding(.top, 10)
         }
         .frame(maxWidth: .infinity)
-        .background(Color.black)
+        .background(Color.white)
     }
+    
 }
 
 struct TimelineQuickTView_Previews: PreviewProvider {
+    static let quickt = QuickT (
+        id: 1,
+        text: "Pois xa estaria, despois de facer unha libreria matemática propia aqui esta, rotación usando quaternions. Mostra angulos de euler pa que sea mais facil de modificar pero internamente a rotacion calculase con quaternions.",
+        userId: 1
+    )
     static var previews: some View {
-        TimelineQuickTView()
+        TimelineQuickTView(quickt: quickt, user: "user")
     }
 }
